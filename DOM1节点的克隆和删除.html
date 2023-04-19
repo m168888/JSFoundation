@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 特殊情况下(例如无缝轮播图)，我们新增节点的操作是：
+            复制一个原有节点
+            把复制的节点放入指定元素内部
+         克隆节点：元素.cloneNode(布尔值)
+                    会克隆一个跟原标签一样的元素，若为true则包含后代节点，false，不克隆后代节点。默认为false
+         追加节点
+
+         删除节点：注意，在原生js的dom操作中，删除元素必须通过父元素删除，这个和display：none有区别，display：none是隐藏节点，而删除是节点会消失
+                   语法：父元素.removeChild(元素)
+         -->
+    <button>点击删除2222</button>
+    <ul>
+        <li>11111</li>
+        <li>22222</li>
+    </ul>
+    <script>
+        let ul =document.querySelector('ul')
+        let newUl=ul.cloneNode(true)
+        let btn =document.querySelector('button')
+        console.log(newUl)
+        document.body.appendChild(newUl)
+
+        btn.addEventListener('click',function(){
+            ul.removeChild(ul.children[1])
+        })
+
+    </script>
+</body>
+</html>

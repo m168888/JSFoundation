@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+        .son1,.son2{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .brother{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(95, 96, 96);
+        }
+    </style>
+</head>
+<body>
+    <!-- DOM节点：DOM数里的每一个内容都称为节点
+            节点类型：
+                     1.元素节点(重点)：所有的标签，body，div等，其中html是根节点
+                     2.属性节点：所有的属性 比如：href,class
+                     3.文本节点：所有的文本
+                     4.其他... -->
+    <!-- 查找节点：父节点：子元素.parentNode 找不到返回null
+                   子节点： 父元素.childNodes 获取所有的子节点，包括文本节点(空格，换行)，注释节点等
+                           children(重点) 仅获得元素节点 返回一个伪数组
+                    兄弟节点: 下一个兄弟节点 nextElementSibling
+                              上一个兄弟节点 previousElementSibling-->
+
+    <div class="father">
+        <div class="son1">
+
+        </div>
+        <div class="son2">
+
+        </div>
+        <div class="brother">
+
+        </div>
+    </div>
+    <script>
+        let son1 =document.querySelector('.son1')
+        let father =document.querySelector('.father')
+        // 子盒子的父亲
+        console.log(son1.parentNode)
+        // 父盒子的后代
+        console.log(father.childNodes)
+        console.log(father.children)
+        // 子盒子的兄弟
+        console.log(son1.nextElementSibling)
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 30px;
+            width: 800px;
+            background-color: rgb(157, 148, 148);
+            color: azure;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        getFullYear()：获得年份               获取四位年份   
+        getMouth()：   获得月份               取值为0-11
+        getDate()：    获得月份的每一天        不同月份取值不同
+        getDay()：     获得星期               取值为0-6 
+        getHours：     获得小时               取值为0-23   
+        getMinutes()： 获得分                 取值为0-59
+        getSeconds()： 获得秒                 取值为0-59  
+     -->
+    <div>
+
+    </div>
+    <script>
+
+        // 先调用一次函数，防止页面刷新有1000毫秒的等待时间
+        getTime()
+
+        setInterval(getTime, 1000);
+        function getTime() {
+            let date = new Date()
+            let div = document.querySelector('div')
+            let year = date.getFullYear()
+            let month = date.getMonth()
+            let date1 = date.getDate()
+            let day = date.getDay()
+            let hour = date.getHours()
+            let min = date.getMinutes()
+            let sec = date.getSeconds()
+            div.innerHTML = `${year}-${month + 1}月-${date1}日 星期${day + 1} ${hour}时-${min}分-${sec + 1}秒`
+            console.log(date.getFullYear())
+            // 月份，星期要+1
+            console.log(date.getMonth() + 1)
+            console.log(date.getMinutes())
+
+        }
+    </script>
+</body>
+
+</html>

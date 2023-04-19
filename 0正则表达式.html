@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        正则表达式：用于匹配字符串中字符组合的模式。在JavaScript中，正则表达式也是对象
+        用于查找，替换符合正则表达式的文本 
+        
+        语法：定义规则->查找
+                let 变量名=/表达式/ 
+                对象.test(str) 检测str中是否有对象的检测对象，有返回true，否则返回false
+                对象.exec(str) 检索符号规则的字符串,有返回数组，否则返回null，
+        
+        元字符：
+            1.边界符(表示位置，开头和结尾，必须用什么开头和结尾)：
+                这里主要有两个字符：^ 表示匹配行首的文本(以谁开始)
+                                    $表示匹配行尾的文本(以数结束)
+            2.量词(表示重复次数，它只对前面一个元字符起效)：
+                设置某个模式出现的次数：
+                                    *出现0次或多次
+                                    +重复一次或更多次
+                                    ?重复0次或一次
+                                    {n}重复n次
+                                    {n,}重复n次或更多次
+                                    {n,m}重复n次到m次
+            3.字符类(比如\d 表示0~9)；
+                []匹配字符合集(只从这里面选出一个元素用于匹配)
+                        只要中括号里面的任意字符出现都返回true   
+                        []中添加 -(连字符)表示一个范围
+                            如[a-z]表示a到z之间的字符都满足条件 
+                        如果^在[]中，表示取反的意思
+                            如[^a-z]表示除a-z之外的所有单个字符   
+                . 匹配除换行符外的所有单个字符
+            
+            4.预定义字符类：
+                \d:匹配0-9之间的任一数字，相当于[0-9]
+                \D:匹配所有0-9以外的字符，相当于[^0-9]
+                \w:匹配任意的字母数字下划线，相当于[A-Za-z0-9_]
+                \W:匹配任意的除了字母数字下划线，相当于[^A-Za-z0-9_]
+                \s:匹配空格(包括换行符，制表符，空格符等)，相当于[\t\r\n\v\f]
+                \S:匹配非空字符串
+                    例如日期格式：^\d{4}-\d{1,2}-\d{1,2}
+
+            5.修饰符约束正则执行的某些细节，如是否区分大小写，是否支持多行匹配等
+                语法：/表达式/修饰符
+                    i：正则匹配时字母不区分大小写
+                    g：匹配所有满足正则表达式的结果
+            6.替换：str.replace(/正则表达式/,'替换的文本' )
+
+
+     -->
+     <script>
+        let str='学前端，月薪过万，前端是从15年开始发展的'
+        // 定义规则
+        let regObj=/前端/
+        // 查找,
+        console.log(regObj.test(str))
+        console.log(regObj.exec(str))
+        // 检测str是否是月薪开头的，这里返回的是false
+        console.log(/^月薪/.test(str))
+        // 检索str是否是以发展的结尾，这里返回的是true
+        console.log(/发展的$/.test(str))
+        // 下面这种方法是严格匹配，中间内容必须一样,这里返回true
+        console.log(/^学前端，月薪过万，前端是从15年开始发展的$/.test(str))
+
+        console.log('------------------------------------------------')
+        console.log(/a*/.test('aaaa'))
+        console.log(/a*/.test(''))
+        console.log(/a+/.test(''))
+        console.log(/a?/.test('a'))
+        console.log(/^a?$/.test('aa'))
+        console.log('------------------------------------------------')
+        console.log(/[abc]/.test('andy'))//true
+        console.log(/[abc]/.test('ndy'))//false
+        console.log(/[a-z]/.test('vad'))//true
+
+        console.log('注意以下情况-------------------------------------')
+        // 这种情况表示test中出现[]中的任意一个字符都算匹配成功，不需要全部匹配(从[]中选一个)
+        console.log(/[abc]/.test('aef'))
+        // 这种情况是严格匹配，表示test中只能有一个与[]中的内容匹配
+        console.log(/^[abc]$/.test('abc'))
+        // 以下都为真
+        console.log(/^[abc]$/.test('a'))
+        console.log(/^[abc]$/.test('b'))
+        console.log(/^[abc]$/.test('c'))
+        console.log(/[^abc]/.test('a'))
+        console.log(/[^abc]/.test('e'))
+        
+        console.log('腾讯QQ的匹配方法')
+        // 这里的意思是，首位范围是1-9，其他位范围是0-9，[0-9]{4,}的含义：因为QQ号是从10000开始排的
+        // 所以[0-9]{4,}中的4表示1后面位数的最小个数为4，可以多于4个
+        console.log(/^[1-9][0-9]{4,}$/.test(1557395981))
+
+        console.log('修饰符')
+        console.log(/a/i.test('a'))//true
+        console.log(/a/i.test('A'))//true
+
+        console.log('-----------------过滤敏感词-----------------------')
+        console.log('你大爷的大爷的狗'.replace(/大爷/,'**'))
+        // 用g进行全家匹配，用或选择符匹配多个敏感词
+        console.log('你大爷的大爷的狗'.replace(/大爷|的狗/g,'**'))
+        console.log('------------------------------')
+        // 正则中可以使用一个()表示一个分组，用于提取内容
+        var str1='<div>我是{{ahjohjf}}</div>'
+        var pattern=/{{([a-zA-Z]+)}}/ //用于匹配姓名
+        var patternResult=pattern.exec(str1)
+        console.log(patternResult)
+        console.log(patternResult[0])
+        console.log(patternResult[1])
+        console.log('-----------------------')
+        // 使用replace进行多次匹配换值
+        var a='<div>{{name}}今年{{ age }}岁了'
+        var b=/{{\s*([a-zA-z]+)\s*}}/
+
+        // 第一次匹配
+        var res1=b.exec(a)
+        console.log(a)
+        // 第一次替换
+        a = a.replace(res1[0],res1[1])
+        console.log(a)
+
+        // 第二次匹配
+        var res2=b.exec(a)
+        console.log(res2);
+        // 第二次替换
+        a=a.replace(res2[0],res2[1])
+        console.log(a)
+
+        console.log('-----------------------')
+        var data={name:'张三',age:20}
+        var str2='<div>{{name}}今年{{ age }}岁了'
+        var pattern2=/{{\s*([a-zA-z]+)\s*}}/
+        var patternResult2=null
+        while(patternResult2=pattern2.exec(str2)){
+            // str2=str2.replace(patternResult2[0],patternResult2[1])
+            // data[name]就是data中对应的真值
+            str2=str2.replace(patternResult2[0],data[patternResult2[1]])
+
+        }
+        console.log(str2)
+     </script>
+</body>
+</html>

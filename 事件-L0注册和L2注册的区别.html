@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        传统注册事件(L0)：
+        语法：元素.onclick()=function(){}
+        同一个对象，后面注册的事件会覆盖前面注册的同一个事件
+        直接使用null覆盖就可以实现事件的解绑
+        都是冒泡阶段执行
+
+        事件监听注册(L2)：
+        语法：元素.addEventListener('click',function(){})
+        后面注册的事件不会覆盖前面的注册的同一事件
+        可以通过第三个参数决定是在冒泡阶段还是在捕获阶段执行
+        必须使用removeEventListener(事件类型，事件处理函数，是否在冒泡阶段执行)解绑
+        匿名函数无法解绑
+     -->
+</body>
+</html>

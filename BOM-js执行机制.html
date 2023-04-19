@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 这里涉及一些面试题：
+        js是单线程，同一个时间只能做一件事，导致任务需要排队执行，定时函数和延时函数可能导致页面渲染可能会加载阻塞
+        解决方案：html5提出web worker标准，允许JavaScript脚本创建多个线程，于是js中出现了同步和异步
+        同步：前一个任务执行完再执行后一个任务，程序的执行顺序和任务的排序顺序是一致的，同步的
+            同步任务：同步任务都在一个主线程上执行，形成一个执行栈
+
+        异步：在执行一个花费时间较久的任务时，异步执行其他任务
+            异步任务：异步任务是通过回调函数实现的
+            一般而言，异步任务有以下三种类型：
+                1.普通事件：如click，resize
+                2.资源加载：如load，error
+                3.定时器：包括setTimeout，setLinterVar
+                4.ajax
+                
+            js执行机制：
+                1.先执行执行栈里的任务
+                2.异步任务放入任务队列中
+                3.当执行栈中的任务执行完毕后，系统会按照次序读取任务队列中的异步任务，送人执行栈的后面开始执行
+
+            由于主线程不断重复的获得任务，执行任务，再获取任务，执行任务，所以这种机制被称为事件循环(event loop)
+
+     -->
+     <script>
+        // 下面两个函数单独执行结果均为1111，3333，2222，原因是js是单线程，意味着任务需要排队，如果延时函数
+        // 占用时间过长会导致卡顿，
+        console.log(1111)
+        
+            setTimeout(function(){
+                console.log(2222)
+            },1000)
+        
+        console.log(3333)
+        console.log('------------------------------------------------')
+        console.log(1111)
+    
+            setTimeout(function(){
+                console.log(2222)
+            },0)
+        
+        console.log(3333)
+     </script>
+</body>
+</html>

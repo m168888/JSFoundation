@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 对象是JavaScript中的数据类型
+         可以理解为一种无序的数据集合
+         
+        特点：可以详细的描述某个事物，是无序的
+        语法：let 对象名 = {
+            属性名：属性值，
+            方法名：函数
+        }     
+         (let 变量 = [] 是数组的定义方式)
+
+        对象由属性(对象具有的特征)和行为或者叫功能(对象具有的动作)
+    -->
+    <script>
+        let person = {
+            uName: 'andy',
+            age: 18,
+            sex: '男',
+            // 对象的方法,使用匿名函数实现
+            sayHi:function(){
+                document.write('hi~ ~ ')
+            },
+            action:function(s){
+               document.write(s)
+            }
+            
+
+        }
+        // 对象的使用由以下两中方法
+        console.log(person.uName)
+        console.log(person['age'])
+        // 方法的使用：对象.方法名()，
+        person.sayHi()
+        // 这里的为实参，对象中的为形参
+        person.action('唱跳rap')
+
+
+        
+        
+
+       
+        
+    </script>
+</body>
+
+</html>

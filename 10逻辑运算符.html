@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+   <title>Document</title>
+</head>
+<body>
+   <!-- 逻辑运算符主要包括：&&(逻辑与) ||(逻辑或) !(逻辑非) 注意逻辑短路，这种情况只会出现在&& ||中，且&&左边为false，就逻辑短路(已经判断左边为假,传递左边的值)
+    ||左边为true，就逻辑短路(已经判断左边为true，传递右边的值)
+      false '' 0 undefined null为假值
+   -->
+   <script>
+    console.log(false&&20)//false
+    console.log(5<3&&20)//false
+    console.log(undefined&&20)//undefined
+    console.log(null&&20)//null
+    console.log(0&&20)//0
+    console.log(10&&20)//20(10已经判断为真)
+    console.log(0&&null)//0
+
+    console.log(false||20)//20
+    console.log(5<3||20)//20
+    console.log(undefined||20)//20
+    console.log(null||20)//20
+    console.log(0||20)//20
+    console.log(10||20)//10
+    console.log(0||null)//null ,在这种情况下，如果||两边都为假，则会传递后面一个值
+   </script>
+</body>
+</html>

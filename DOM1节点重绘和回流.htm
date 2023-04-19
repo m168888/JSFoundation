@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1浏览器进行界面渲染的步骤是：
+        解析(parser)HTML，生成DOM树，同时解析css，生成样式规则(style rules)
+        根据DOM树和样式规则生成渲染树(render tree)
+        进行布局Layout(回流/重排)：根据生成的渲染树，得到节点的集合信息(位置，大小)，简单理解就是在页面中布局盒子，只是还没添加内容
+        进行绘制painting(重绘)：根据计算和获取的信息进行整个界面的绘制，在布局好的盒子中添加具体内容
+        display：展示在页面上
+
+        回流：当渲染树(render tree)中部分或者全部元素的尺寸，结构，布局等发生改变时，浏览器就会重新渲染部分或者全部文档的过程称为
+              回流
+        重绘：由于节点(元素)的样式发生的改变并不影响它在文档流中的位置和文档布局时，(如：color，background-color，outline等，注意
+              margin，border会改变盒子的尺寸)称为重绘
+        重绘不一定引起回流，但是回流一定会引起重绘
+        会导致回流的操作：
+            页面的首次刷新
+            浏览器窗口的变化
+            元素大小或者位置发生改变
+            改变字体大小
+            内容的变化(如：input框的输入，图片的大小)
+            激活伪类css(如：hover)
+            脚本操作DOM(添加或者删除元素)
+        简单理解为影响到了布局的操作，就会有回流
+     -->
+</body>
+</html>

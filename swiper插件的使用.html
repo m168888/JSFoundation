@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
+    <style>
+        /* box是为了限制轮播图位置 */
+        .box {
+            width: 600px;
+            height: 350px;
+            background-color: rgba(255, 192, 203, 0.263);
+            margin: 100px auto;
+        }
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+         swiper兼容移动端，下面的代码手机端也可以使用
+        组件地址：https://swiper.com.cn/
+        使用方法：中文教程->查看使用方法
+                  获取swiper->下载css，js
+                  找到swiper文件夹下的swiper-bundle.min.css和swiper-bundle.min.js,这两个是压缩过的(或者放入单独的js和css文件夹)
+                  在swiper文件夹中选中demo文件夹，选择在网页的在线演示中选择的id编号
+                  点开后查看网页原码，复制css样式规则和html结构，复制网页原码底部的js模块
+     -->
+    <div class="box">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-3.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-4.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-5.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-6.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-7.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../ListedIteams/images/focus-8.jpg" alt=""></div>
+                
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <script src="./swiper/swiper-bundle.min.js"></script>
+    <script>
+        
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+</body>
+
+</html>

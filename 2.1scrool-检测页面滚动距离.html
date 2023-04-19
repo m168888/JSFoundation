@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2400px;
+        }
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+         // 监听页面的滚动距离
+         console.log(document.documentElement)
+         window.addEventListener('scroll',function(){
+            // 得到页面滚动的距离
+            // 这里的documentElement代表的是整个html页面的一种写法,这里是为了获取页面的全部内容
+            let top=document.documentElement.scrollTop
+            console.log(top)
+            // 设置页面顶部默认滚动距离为500,设置后页面就固定了
+            document.documentElement.scrollTop=500
+        })
+    </script>
+</body>
+</html>

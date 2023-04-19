@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+        }
+        img{
+            display: none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+            let div=document.querySelector('div')
+            div.style.backgroundColor='pink'
+        })
+    </script>
+</head>
+<body>
+    <!-- 加载事件：加载外部资源(如：加载图片，外联css和JavaScript等)加载完毕时触发的事件
+                  
+         原因：一些事件要等到有一些事加载完成后才能执行
+                一些老代码的js文件写在head中，这时候代码从上往下执行时如果js没有加载完会影响整个网页
+                这个时候需要等dom数渲染完成后在调用js文件，防止因为dom数的一些元素没有渲染完成影响js的执行
+         事件名：load
+         监听页面所有的资源加载完毕：给window添加加载事件 
+         也可以为某个具体的元素添加加载监听，
+        
+        另一种对dom元素加载监听的方法：DOMcontentLoaded，当html文档被加载完成，就可以触发，不需要等待所有元素加载完毕，
+        防止因为个别大文件过大导致页面加载时间过长-->
+    <div>
+        <img src="../img/th (2).jpg" alt="">
+    </div>
+    <script>
+        let img=document.querySelector('img')
+        document.addEventListener('DOMContentLoaded',function(){
+            img.style.display='block'
+        })
+    </script>
+</body>
+</html>

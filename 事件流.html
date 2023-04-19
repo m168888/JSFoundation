@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        事件流指的是事件完整执行过程中的流动路径
+        分为两个阶段：捕获阶段：document->element html->element body->element div 
+                     冒泡阶段(反向)：element div->element body->element html->document
+        事件冒泡：当一个元素被触发时，同样的事件将会在该元素的所有祖先元素中依次被触发。这一过程称为事件冒泡
+
+     -->
+
+     <!-- 事件冒泡：点击子盒子，因为父盒子也有点击事件，会导致祖先元素的点击事件也会被触发，它是默认存在的
+          事件捕获(了解)：从dom的根元素开始去执行对应的事件(从外到里),例如下面的函数添加true后执行顺序会改变
+                   事件捕获需要使用代码才能启用
+                   语法：元素.addEventListener(事件类型(click)，事件处理函数，是否使用捕获机制) 
+                    对于L0(元素.onclick 开启的事件)，只有冒泡阶段，没有捕获-->
+    <div class="father">
+        <div class="son">
+
+        </div>
+    </div>
+    <script>
+        let father=document.querySelector('.father')
+        let son=document.querySelector('.son')
+        father.addEventListener('click',function(){
+            alert('father')
+        },true)
+        son.addEventListener('click',function(){
+            alert('son')
+        },true)
+        // 这个事件不受子盒子点击影响，因为它是双击事件
+        document.addEventListener('dblclick',function(){
+            alert('grandfather')
+        })
+    </script>
+</body>
+</html>

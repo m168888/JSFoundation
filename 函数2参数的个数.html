@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fn(x,y){
+        // x||0
+        // y||0
+        //     console.log(x+y)
+        // }
+        // 实参少于形参
+        // fn(1) 结果为NaN，因为y为undefined
+        // 实参多于形参,会自动忽视多余数据
+
+        function fn() {
+            console.log(arguments)
+        }
+        // 特殊情况：在非严格模式下，fn中可以不定义形参，此时可以在函数体中使用argument以伪数组接受实参
+        fn(1, 2, 4)
+    </script>
+</body>
+
+</html>

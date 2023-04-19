@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        时间戳：值从1970年01月01日00时00分00秒起到现在的总毫秒数，它是一种特殊的计量时间的方式
+        用处：一般用于计算倒计时，用将来(时间的时间戳-现在的时间戳)/1000=等于两者相隔的秒数
+     -->
+    <!-- 
+        获取时间戳：1.getTime()
+                    2.+new Date()重点记忆
+                     3.Date.now()这种方式不用实例化，但只能得到当前的时间戳
+     -->
+     <script>
+        let date=new Date()
+        console.log(date.getTime())
+        console.log(+new Date())
+        console.log(Date.now())
+
+        // 获得指定时间戳
+        console.log(+new Date('2022-10-3 12:00:00'))
+     </script>
+</body>
+</html>

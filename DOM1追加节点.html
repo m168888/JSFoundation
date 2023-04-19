@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+        }
+        .text{
+            background-color:blue;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 使用场景：在一些情况下，我们需要在页面中增加元素，比如点击发布按钮，新增一条信息
+         操作方法：1.创建新节点  2.把创建的节点放入指定的元素内部 
+                    创建节点：document.createElement('标签名')
+                    放入元素：父元素.appendChild(要插入的元素，放到父元素里的最后)
+                              父元素.insertBefore(要插入的元素，在那个元素前面)-->
+    <div class="box">
+        <div class="text">
+
+        </div>
+    </div>
+    <script>
+        let div= document.createElement('div')
+        let box=document.querySelector('.box')
+        console.log(div)
+        div.className='one'
+        div.style.border='1px solid #ccc'
+        div.style.height='40px'
+        box.appendChild(div)
+
+        let content=document.createElement('div')
+        console.log(box.children[0])
+        content.style.className='two'
+        content.style.backgroundColor='red'
+        content.style.height='40px'
+        console.log(content)
+        box.insertBefore(content,box.children[0])
+    </script>
+</body>
+</html>

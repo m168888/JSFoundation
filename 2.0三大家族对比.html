@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            overflow: auto;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 使用scroll检测滚动的距离 
+           1.获取元素的内容的总宽高(不包含滚动条) 返回值不带单位,与盒子高度无关
+               scrollWidth和scrollHeight
+           2.获取元素的位置,获取元素内容往左。往上滚出去看不见的距离
+               scrollLeft和scrollTop
+               这两个属性是可以更改的
+               
+         offset作用：自动获取元素在网页中的位置
+            获取元素自身的宽高，包含元素自身设置的宽高，padding，border
+            就是盒子的大小
+            offsetWidth
+            offsetHeight
+            获取位置：获取元素距离自己定位父级元素的左，上距离，实际开发中通常以页面右上角为准，因为基本上父盒子没有定位
+                offsetLeft和offsetTop 这里不能自定义位置 
+        
+        client:获取元素可见部分的宽高(不包含边框，滚动条等)
+        -->
+    <div>
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+    </div>
+
+    <script>
+        let div = document.querySelector('div')
+        console.log('scroll-----------------------------------')
+        console.log(div.scrollHeight)
+        console.log(div.scrollWidth)
+        // 被卷去的头部和左侧的距离
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop)
+
+        })
+
+        console.log('offset------------------------------------')
+        console.log(div.offsetWidth)
+        console.log(div.offsetHeight)
+        console.log(div.offsetLeft)
+        console.log(div.offsetTop)
+
+        console.log('client----------------------------------')
+        console.log(div.clientWidth)
+        console.log(div.clientHeight)
+        console.log(div.clientTop)
+        console.log(div.clientLeft)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <!-- 修改设置使用document.write(), .innerText属性和.innerHTML属性
+        document.write()只能将文本追加到</body>前面的位置，且文本中包含的标签都会被解析
+        innerText:将文本内容添加到/更新到任意标签位置，文本中包含的标签不会被解析，不能确定数据安全时使用 -->
+    <div>
+        你好啊
+    </div>
+    <img src="../img/course01.png" alt="">
+    <button>点击一下</button>
+    <script>
+        let box = document.querySelector('div')
+        console.log(box)
+        // box.innerText='<strong>有点意思,不识别标签</strong>'
+        box.innerHTML = '<strong>有点意思,识别标签</strong>'
+        // 可以通过对象的属性值修改dom元素
+        let pic = document.querySelector('img')
+        let btn = document.querySelector('button')
+        btn.onclick = function () {
+            pic.src = '../img/course02.png'
+        }
+    </script>
+</body>
+
+</html>

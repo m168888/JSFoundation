@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="one" id="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 获取多个元素
+        // 这种方式获得的是一个伪数组(有长度的，有索引的数组，但是没有数组的自带方法：pop，等)
+        let lis=document.querySelectorAll('ul li')
+        console.log(lis)
+        // 其他
+        // 根据id获取元素
+        document.getElementById('one')
+        // 根据标签获取元素
+        document.getElementsByTagName('div')
+        // 根据类名获取元素
+        document.getElementsByClassName('two')
+    </script>
+</body>
+</html>

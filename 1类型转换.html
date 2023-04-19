@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-07-07 16:42:23
+ * @LastEditTime: 2022-08-13 18:05:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VSHTML\1类型转换.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 类型转换可分为隐式类型转换和显式类型转换 -->
+    <!-- 隐式类型转换：
+                      +两边只要一个是字符串，就会把另一个转成字符串
+                      除了+以外的算术运算符比如- *  / 等都会把数据转换成数字类型 -->
+    <script>
+        // 应用场景：从表单获取的数据多数为字符串类型，不能直接使用
+        // 隐式转换
+        let num = prompt('请输入数字：')
+        console.log(typeof (num))
+        console.log(typeof (num - 10))
+
+        // 小应用： + 可以快速将字符串解析Number类型
+        console.log(typeof (+'10'))
+        console.log(10 + '10')
+        console.log(10 + +'10')
+    </script>
+
+    <!-- 显式转换：Number(数据)：转换成数字类型，如果字符串内容不是数字，转换失败，结果为NaN(not a number)
+                  Nan也是Number类型的数据，代表非数字
+                  parseInt(数据)：只保留整数
+                  priseFloat(数据)：可以保留小数-->
+    <script>
+        console.log('10')
+        console.log(Number('10'))
+        console.log(parseInt('10'))
+        console.log(parseInt('10.343'))
+        console.log(parseFloat('10.343'))
+
+        // 区别：Number只能放数字，不能放类似于：12abd的数据，
+        //pareseFloat可以将数字以外的字符过滤
+        console.log(Number('1233sdad'))
+        console.log(parseFloat('123px'))
+    </script>
+
+    <!-- 其他:转换成字符型 -->
+
+    <script>
+        console.log(String(10))
+        let age = 18;
+        // toString(进制)
+        console.log(age.toString())
+        console.log(age.toString(2))
+
+    </script>
+
+    <!-- 转换成Boolean类型：使用Boolean()函数，代表空、否定的值会被转换成false，如'',0,NaN,null,undefined -->
+    <script>
+        console.log(Boolean(''))
+        console.log(Boolean(0))
+        console.log(Boolean(NaN))
+        console.log(Boolean(null))
+        console.log(Boolean(undefined))
+    </script>
+</body>
+
+</html>

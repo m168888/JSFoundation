@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            height: 30px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WebApi：作用：使用js操作html和浏览器
+                 分类：DoM(文档对象模型)    BoM(浏览器对象模型)
+                 DOM:浏览器专门用于操纵网页内容的功能
+                        开发网页特效和用户交互
+                
+                 DoM树：将HTML文档以树状结构直观的表示出来，称为文档树或者DOM树
+                 DOM对象：浏览器根据HTML标签自动生成js对象，如a在页面中是连接标签，通过dom获取的为对象
+                          所以标签属性在这个对象上都可以找到
+                          修改这个对象的属性会自动映射到标签身上
+                 DOM的核心思想：将网页内容当作对象处理
+                 document对象：是DoM提供的一个对象
+                               它提供的属性和方法都是用来访问和操作网页内容的(列如：document.write)
+                               网页所以内容都在document中
+                 BOM: -->
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 根据css选择器获得对象
+        let div1 = document.querySelector('.three')//选择匹配的第一个元素，注意需要注明css选择的方式(.或者#)
+        let div2 = document.querySelector('div')
+        console.log(div1)
+        console.log(div2)
+        console.log('---------------------------------------')
+         //获取最后一个li
+         let lastLi=document.querySelector('ul li:last-child')
+         console.log(lastLi)
+    </script>
+</body>
+
+</html>

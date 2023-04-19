@@ -1,0 +1,53 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-07-07 14:04:44
+ * @LastEditTime: 2022-08-13 18:38:05
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \VSHTML\demo1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button-color {
+            background-color: rgb(187, 41, 41);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- js是什么：是一种运行在客户端(浏览器)的编程语言，实现人机交换效果
+         作用：1、网页特效(监听用户的一些行为，让网页做出相应的反馈
+               2、表单验证(针对表单数据的合法性进行判断,js最初的用处))
+               3、数据交互(获取后台的数据，渲染到前端)
+               4、服务端编程(在node.js出现后,js可以做后台的一些事情)-->
+    <button class="button-color">按钮</button>
+    <button class="">按钮</button>
+    <button class="">按钮</button>
+    <button class="">按钮</button>
+
+    <!-- 
+        控制按钮的颜色：点谁谁就变色
+     -->
+    <script>
+        var btns = document.querySelectorAll('button');
+
+        for (let i = 0; i < btns.length; i++) {
+            // 添加按钮点击事件，通过函数更改类名更改按钮颜色
+            btns[i].addEventListener('click', function () {
+                // 清空遗留的样式
+                document.querySelector('.button-color').className = ""
+                this.className = 'button-color'
+            })
+        };
+    </script>
+
+</body>
+
+</html>

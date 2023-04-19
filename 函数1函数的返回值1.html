@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- return的一些细节：
+            函数体内使用return关键字可以将内部的执行结果交给函数外的代码使用
+            函数内部只能出现一次return，并且return后的代码不会被执行，所以return后的数据不要换行(除非用了``)
+            return会立即结束当前函数
+            函数可以没有return，这种情况函数的默认返回值是undefined -->
+    
+    <!-- 利用数组，函数可以返回多个值 -->
+    <script>
+        function way(x,y){
+            let jia=x+y
+            let jian=x-y
+            return [jia, jian ]
+        }
+
+        let re=way(1,3)
+        document.write(`加法：${re[0]}
+                        减法：${re[1]}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 获取：dom对象.属性名
+         设置：dom对象.属性名=值
+                 -->
+    <form action="post">
+        <input type="text" value="请输入">
+        <input type="checkbox" name="" id="" class="agree">
+        <!-- 这里按钮处于不可点击状态 -->
+        <button disabled>点击</button>
+    </form>
+
+    <script>
+        let input=document.querySelector('input')
+        let btn=document.querySelector('button')
+        let checked=document.querySelector('.agree')
+        console.log(input.value)
+        // 清空内容
+        input.value=''
+        // 设置新内容
+        input.value='你好，请输入'
+        // 隐藏内容
+        input.type='passWord'
+
+        // 设置按钮可点击，一般使用场景列如需要用户同意协议才能提交，不同意按钮处于不可点击状态
+        btn.disabled=false
+        // 设置复选框默认为选中状态
+        checked.checked=true
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 立即执行函数是匿名函数的变体，无需调用 
+        使用场景：放在变量污染-->
+    <script>
+        //    let btn= function(){}
+        //    btn()
+        // 下面的立即执行函数第一个小括号放形参，第二个小括号放实参
+        // (function(形参) {
+        //     console.log(111);
+        //  })(实参)
+        (function(x,y){
+            console.log(x+y)
+        })(3,5);
+
+        // 注意多个立即函数中间需要;分号分隔，否则会报错
+        // 另一种写法
+        // (function(){} ())
+        (function fn(x,y){
+            console.log(x*y)
+        }(3,4))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 这种方法类似于媒体查询
+        window.addEventListener('resize',function(){
+            // 获取屏幕当前的宽度
+            let width=document.documentElement.clientWidth
+            console.log(document.documentElement.clientWidth)
+            if(width>1290){
+                document.body.style.backgroundColor='pink'
+            }else if(width>540){
+                document.body.style.backgroundColor='skyblue'
+
+            }else{
+                document.body.style.backgroundColor='green'
+            }
+            
+        })
+    </script>
+</body>
+</html>

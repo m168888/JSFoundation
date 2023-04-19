@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            overflow: auto;
+            width: 100px;
+            height: 100px;
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 掌握元素的大小和位置的获取方法
+           使用scroll检测滚动的距离 
+           1.获取元素的内容的总宽高(不包含滚动条) 返回值不带单位,与盒子高度无关
+               scrollWidth和scrollHeight
+           2.获取元素的位置,获取元素内容往左。往上滚出去看不见的距离
+               scrollLeft和scrollTop
+               这两个属性是可以更改的
+               -->
+
+    <div>
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+        这里是内容
+    </div>
+    <script>
+        let div=document.querySelector('div')
+        console.log(div.scrollHeight)
+        console.log(div.scrollWidth)
+        // 被卷去的头部和左侧的距离
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop)
+            console.log(div.scrollLeft)
+        })
+       
+    </script>
+</body>
+</html>

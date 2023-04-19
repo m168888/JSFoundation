@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uName: 'li',
+            age: 12,
+            sex: '男'
+        }
+         // 对象的遍历：in
+        // 这里的变量key是对象中的属性或者方法
+        for(let key in obj){
+            console.log(key)//属性名
+            // console.log(obj.key)这里的意思是查找obj里面的key属性，而对像中没有这个属性
+            // 这里之所以不写obj['key']是因为在对象的遍历方式中，key==='uName',所以在obj[]中直接写key就行了,且在这种方式中，只能用这种方式
+            console.log(obj[key])
+        }
+    </script>
+</body>
+
+</html>

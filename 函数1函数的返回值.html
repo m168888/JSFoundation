@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 函数是用于执行特定认为的代码块，而返回值是将执行结果反馈 -->
+    <script>
+        function getSum(x, y) {
+            x = x || 0
+            y = y || 0
+            return `结果是：<h3>${x + y}</h3>`
+        }
+
+        let result = getSum(3, 5)
+        document.write(result)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mi {
+            position: relative;
+            width: 223px;
+            margin: 100px auto;
+            /* border: 1px solid #ccc; */
+        }
+
+        .mi input {
+            width: 100%;
+            height: 48px;
+            left: 48px;
+            font-size: 14px;
+            padding-left: 3px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .mi .search{
+            border: 1px solid #ff6700;
+        }
+
+        .result-list {
+            position: absolute;
+            display: none;
+            left: 0;
+            top: 48px;
+            width: 100%;
+            border: 1px solid #ff6700;
+        }
+
+        ul li {
+            
+            font-weight: 300;
+            list-style: none;
+            padding: 5px 10px;
+
+        }
+
+        a {
+            color: rgb(42, 42, 42);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 鼠标事件：click
+                   mouseenter 鼠标经过
+                   mouseleave 鼠标离开
+         焦点事件：focus 获得焦点
+                   blur 失去焦点
+         键盘触发： keydown 键盘按下触发
+                    keyup 键盘抬起触发
+         表单输入触发：input 用户输入事件
+    -->
+
+    <!-- 小米搜索框案例：
+            需求：当表单获得焦点时，显示下拉菜单，失去焦点隐藏下拉菜单 -->
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米11</a></li>
+            <li><a href="#">小米iOS</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">小米手机</a></li>
+            <li><a href="#">黑鲨4</a></li>
+            <li><a href="#">节能空调</a></li>
+        </ul>
+    </div>
+    <script>
+        let search=document.querySelector('input[type=search]')
+        let list =document.querySelector('.result-list')
+        console.log(list)
+        // console.log(search)
+        // 事件监听
+        search.addEventListener('focus',function(){
+            // console.log('111');
+            // 文本框变色
+            search.classList.add('search')
+            // 显示下拉菜单
+            list.style.display='block'
+            
+        })
+        search.addEventListener('blur',function(){
+            search.classList.remove('search')
+            list.style.display='none'
+        })
+    </script>
+</body>
+
+</html>

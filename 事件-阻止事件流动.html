@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        为什么要阻止：因为默认就有冒泡模式，所以子级元素的事件可能会影响父级元素
+                     若想把事件就限制在当前元素内，就需要阻止事件流动
+                     阻止事件流动需要拿到事件对象
+                     语法：事件对象.stopPropagation()  这个捕获阶段也有效
+     -->
+      <!-- 鼠标经过事件：mouseover和mouseout会有冒泡效果
+                        mouseenter和mouseleave没有冒泡效果 -->
+     <div class="father">
+        <div class="son">
+
+        </div>
+     </div>
+    <script>
+         let father=document.querySelector('.father')
+        let son=document.querySelector('.son')
+        father.addEventListener('click',function(){
+            alert('father')
+        })
+        son.addEventListener('click',function(e){
+            alert('son')
+            // 阻止子盒子的点击事件影响它的父元素
+            e.stopPropagation()
+        })
+        // 这个事件不受子盒子点击影响，因为它是双击事件
+        document.addEventListener('dblclick',function(){
+            alert('grandfather')
+        })
+    </script>
+</body>
+</html>

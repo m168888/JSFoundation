@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        阻止默认行为：比如点击链接可以不跳转，表单域不提交
+        语法：e.preventDefault()
+     -->
+
+    <a href="http://www.baidu.com">跳转到百度</a>
+    <script>
+        let a=document.querySelector('a')
+        a.addEventListener('click',function(e){
+            e.preventDefault()
+        })
+    </script>
+</body>
+</html>

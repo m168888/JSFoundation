@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        let num=0
+        // 递归函数：自己调用自己,注意设置退出条件，否则可能会报错
+        // function fn(){
+        //     num++
+        //     console.log(111)
+           
+        //     if(num>=100){
+        //         return
+        //     }
+        //      fn()
+        // }
+        // fn()
+
+        // 可以使用递归函数，用延时函数实现和定时函数一样的效果
+        let div=document.querySelector('div')
+        // console.log(div)
+        function div_c(){
+            div.innerHTML=new Date().toLocaleDateString()
+            setTimeout(div_c,1000)
+        }
+        div_c()
+    </script>
+</body>
+</html>

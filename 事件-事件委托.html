@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件委托：是利用事件流的特性解决一些开发需求
+                提高性能，减少了注册事件的元素
+        事件委托给父元素，通过target属性获得父元素中被触发的元素
+    -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        // 不用为每一个小li注册事件，而是把事件委托给它的父元素、
+        // 事件委托是给父级添加事件
+        let ul =document.querySelector('ul')
+        ul.addEventListener('click',function(e){
+            // 这里点击li后网页会查看li是否有点击事件，由于冒泡机制，li的父级设置了点击事件，这里就会触发父级的点击事件
+            // alert('点击了')
+
+            // 通过事件对象获得点击的第几个小li，在e对象的li对象里面有target属性
+            console.log(e)
+            console.log(e.target)
+            e.target.style.border='1px solid red'
+
+        })
+    </script>
+</body>
+</html>

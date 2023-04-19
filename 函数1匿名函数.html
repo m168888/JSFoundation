@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 没有名字的函数
+        使用方法：将匿名函数赋值给一个变量，并且通过变量名称调用，也称为函数表达式
+        语法：let fn= function(){
+
+        } -->
+    <button></button>
+    <script>
+        // let fn=function(){
+        //     let x=1
+        //     let y=0 
+        //     document.write(x-y)
+        // }
+        
+        // fn()
+
+    let btn=document.querySelector('button')
+    btn.onclick=function(){
+        btn.style.border='1px solid red'
+    }
+    </script>
+</body>
+</html>

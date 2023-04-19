@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+   <title>Document</title>
+</head>
+<body>
+   <script>
+    // 条件 ？满足条件执行的代码：不满足条件的代码
+    console.log( true ? 1:2)
+    console.log( false ? 1:2)
+    console.log(false ? value=33:44)
+
+   //  switch case一般用于等值判断，不适与区间判断(只有具体的比较，不能用于列如大于 ，小于 等的判断)
+   //  switch case一般需要搭配break使用，没有会导致case穿透(没有break会一直向后执行)
+   //  default:默认的设置，
+   //  注意：switch(传入的数据) case(用于匹配的符号)中，数据和符号必须是'==='(数据类型和内容相等)
+   let choice=prompt('请输入选择的序号：')
+    switch(choice){
+      case '1':
+         alert(1)
+         break
+      case '2':
+         alert(2)
+         break
+      case '3':
+         alert(3)
+         break
+      case '4':
+         alert(4)
+         break
+      default:
+         alert('没有此项选择')
+    }
+   </script>
+</body>
+</html>

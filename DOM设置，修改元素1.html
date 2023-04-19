@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- 可以通过js设置或者修改标签元素的样式属性
+            如轮播图的小圆点和图片滚动
+        学习路径：通过style属性操作css
+                 操作类名(className)操作css
+                 通过classList操作类控制css -->
+    <div>
+
+    </div>
+    <button>点击一下</button>
+    <script>
+        let box=document.querySelector('div')
+        let btn=document.querySelector('button')
+        // 通过style操作
+        btn.onclick=function(){
+              box.style.backgroundColor='pink'
+              box.style.marginTop='100px'
+        }
+      
+    </script>
+</body>
+</html>

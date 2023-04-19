@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 间隙函数使用场景：网页开发中经常会需要一种功能，每隔一段时间需要自动执行一段代码，而不需要手动去触发
+        如轮播图，用户协议倒计时
+        定时器可以开启和关闭：
+            开启：setInterval(函数，间隔时间:毫秒) 作用：每隔一段时间自动调用内部的函数
+            关闭：clearInterval(变量名)
+     -->
+    <script>
+        setInterval(function(){
+            console.log('1')
+        },1000)
+
+        function show(){
+            document.write('加油，坚持')
+        }
+        // 这种方式函数不加小括号，函数返回的是调用定时器的序号
+        let time1= setInterval(show,1000)
+        let time2=setInterval(show,1000)
+        console.log(time1)
+        console.log(time2)
+        // 关闭序号为2定时器
+        clearInterval(time1)
+    </script>
+</body>
+</html>

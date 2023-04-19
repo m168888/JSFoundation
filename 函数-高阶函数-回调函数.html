@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">2222</div>
+    <!-- 高阶函数可以理解为函数的高级应用，javascript中函数可以被当成[值]来对待，基于这个特性实现
+    函数的高阶应用
+         [值] 就是JavaScript中的数据，如数值、字符串、布尔、对象等 -->
+   
+    <script>
+        let box=document.querySelector('.box')
+        //  <!-- 函数的表达式 -->
+        // 这个是一个表达式
+        let name ='11'
+        // 这是函数表达式
+        let fn =function(){
+            console.log('111');
+        }
+
+
+        // 回调函数：如果将函数A作为参数传递给函数B时，我们称函数A为回调函数
+        // 如：setInterval()是间隙函数每隔一秒就会返回调用fn，此时fn就是回调函数,
+        setInterval(fn,1000)
+        // 又如
+        box.addEventListener('click',fn)
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        随着互联网的发展，基于网页的应用越来越多，同时也变的越来越复杂，为了满足各种各样的需求，会
+        经常性的在本地存储大量的数据，html5中提出了相应的解决方案
+        1.数据存储在用户浏览器中
+        2.设置读取方便，甚至刷新页面也不丢失数据
+        3.容量较大，sessionStorage和LocalStorage约为5M左右
+
+        LocalStorage:
+            生命周期永久有效，除非手动删除，否则关闭页面也会存在
+            可以多窗口共享(同一个浏览器)
+            以键值对形式存储使用
+
+            语法：
+               存数据： localStorage.setitem(key,value)
+               获取数据：localStorage.getitem(key)
+               删除数据：localStorage.remove(key)
+     -->
+
+     <script>
+        // 存储数据的查看方法：运行到浏览器，右键检查，应用选项卡（应用程序），右侧本地存储空间
+        localStorage.setItem('name','LiHua')
+        let data=localStorage.getItem('name')
+        console.log(data)
+
+        // 利用复杂数据类型中的对象同时存储多组数据
+        let obj={
+            userName:'xiao',
+            age:12,
+            address:'学生',
+            place:'贵阳'
+        }
+        // localStorage.setItem('obj',obj)这种存储方法无法直接看到数据
+
+        // 使用JSON.stringify(复杂数据类型) 将复杂数据类型转换为JSON字符串，再存储到本地
+        // 使用JSON.parse(JSON字符串) 将JSON字符串转换成对象，取出数据时使用
+        // JSON 属性和值都是双引号包含
+        localStorage.setItem('obj',JSON.stringify(obj))
+        console.log(JSON.stringify(obj))
+        // 取数据
+        // localStorage.removeItem('data')
+        // console.log(localStorage.getItem('obj'))这种方法取出来的数据时字符串，不能直接使用
+        console.log(JSON.parse(JSON.stringify(obj)))
+     </script>
+</body>
+
+</html>

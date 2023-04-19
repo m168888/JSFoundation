@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        事件对像：存储事件触发时的相关信息，如：鼠标点击事件中，事件对象就包含了鼠标点击时
+        的位置信息
+        绑定：在事件绑定的回调函数中的第一个参数就是事件对象，一般命名为event，ev，e
+        语法：元素.addEventListener('click'，function(event){
+
+        })
+        常用属性：type：获取当前事件的类型
+                  clientX/clientY：获取光标相对于浏览器可见窗口左上角的位置
+                  offsetX/offsetY：获取光标相对于当前dom元素左上角的位置
+                  pageX/pageY:不受窗口大小的影响，在整个页面有效
+                  key:用户按下键盘的值
+     -->
+     <button>点击一下</button>
+     <input type="text" name="" id="">
+     <script>
+        let btn =document.querySelector('button')
+        btn.addEventListener('click',function(e){
+            console.log(e)
+        })
+        // 为文档添加鼠标移动事件
+        document.addEventListener('mousemove',function(e){
+            console.log(e.clientX,e.clientY)
+            
+        })
+     </script>
+</body>
+</html>
